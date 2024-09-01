@@ -1,0 +1,36 @@
+{
+  "count": 10,
+  "data": [
+    {
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "skillset": ["javascript", "react"],
+      "minSalaryPerHour": 5000
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "skillset": ["javascript", "react"],
+      "minSalaryPerHour": 5000
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "skillset": ["javascript", "react"],
+      "minSalaryPerHour": 5000
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "skillset": ["javascript", "react"],
+      "minSalaryPerHour": 5000
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "skillset": ["javascript", "react"],
+      "minSalaryPerHour": 5000
+    }
+  ],
+  "success": true
+}
