@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import EmployerPage from "./pages/EmployerPage";
+import ProtectedRoute from "routes/ProtectedRoutes";
+import { Suspense } from "react";
+import FreelancerPage from "pages/FreelancerPage";
+import { lazyLoadRoutes } from "routes/LazyLoadRoutes";
+
+const FreelancerPageLazy = lazyLoadRoutes("FreelancerPage");
+const EmployerPageLazy = lazyLoadRoutes("EmployerPage");
+const ApplicantProfileLazy = lazyLoadRoutes("ApplicantProfilePage");
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/freelancer" element={FreelancerPageLazy} />
+        <Route path="/employer" element={EmployerPageLazy} />
+        <Route path="/employer/applicant/:id" element={ApplicantProfileLazy} />
+      </Route>
+    </Routes>
   );
 }
-
 export default App;

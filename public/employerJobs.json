@@ -1,0 +1,66 @@
+[
+  {
+    "id": 101,
+    "role": "Software Engineer",
+    "companyName": "Intuit",
+    "skillset": ["node", "react"],
+    "minSalaryPerHour": 5,
+    "applicants": []
+  },
+  {
+    "id": 102,
+    "role": "Product Manager",
+    "companyName": "Intuit",
+    "skillset": ["node"],
+    "minSalaryPerHour": 10,
+    "applicants": []
+  },
+  {
+    "id": 103,
+    "role": "Tester",
+    "companyName": "Intuit",
+    "skillset": ["java", "ai"],
+    "minSalaryPerHour": 20,
+    "applicants": []
+  },
+  {
+    "id": 104,
+    "role": "Analyst",
+    "companyName": "Intuit",
+    "skillset": ["react"],
+    "minSalaryPerHour": 70,
+    "applicants": []
+  },
+  {
+    "id": 105,
+    "role": "Software Engineer",
+    "companyName": "Intuit",
+    "skillset": ["node", "react"],
+    "minSalaryPerHour": 5,
+    "applicants": []
+  },
+  {
+    "id": 106,
+    "role": "Product Manager",
+    "companyName": "Intuit",
+    "skillset": ["node"],
+    "minSalaryPerHour": 10,
+    "applicants": []
+  },
+  {
+    "id": 107,
+    "role": "Tester",
+    "companyName": "Intuit",
+    "skillset": ["java", "ai"],
+    "minSalaryPerHour": 20,
+    "applicants": []
+  },
+  {
+    "id": 108,
+    "role": "Analyst",
+    "companyName": "Intuit",
+    "skillset": ["react"],
+    "minSalaryPerHour": 70,
+    "applicants": []
+  }
+]
