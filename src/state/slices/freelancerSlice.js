@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-console.log("process.env", process.env.NODE_ENV);
+console.log("PUBLIC_URL", process.env.PUBLIC_URL);
 
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -13,7 +13,7 @@ console.log("BASE_URL", BASE_URL);
 
 export const fetchJobs = createAsyncThunk("fetchJobs", async () => {
   try {
-    const response = await fetch(`${BASE_URL}/jobs.json`);
+    const response = await fetch(`${process.env.PUBLIC_URL}/jobs.json`);
     if (response.ok) {
       const result = await response.json();
       return result;
