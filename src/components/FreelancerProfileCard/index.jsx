@@ -4,8 +4,8 @@ import useGithubProjects from "hooks/useGithubProjects";
 
 const { Title, Text } = Typography;
 
-const getGitHubRepoLink = (repo) => {
-  return `https://github.com/nishesh96/${repo}`;
+const getGitHubRepoLink = (url) => {
+  return url;
 };
 
 const FreelancerProfileCard = ({ newUser, user }) => {
@@ -57,11 +57,7 @@ const FreelancerProfileCard = ({ newUser, user }) => {
           }}
           renderItem={(item) => (
             <List.Item>
-              <a
-                href={getGitHubRepoLink(item.name)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={item.html_url} target="_blank" rel="noopener noreferrer">
                 {item.name}
               </a>
             </List.Item>
