@@ -1,15 +1,21 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+console.log("process.env", process.env.NODE_ENV);
+
+const NODE_ENV = process.env.NODE_ENV;
+
+const BASE_URL =
+  NODE_ENV === "development"
+    ? process.env.REACT_APP_LOCAL_URL
+    : process.env.REACT_APP_PRODUCTION_URL;
+
+console.log("BASE_URL", BASE_URL);
+
 export const fetchJobs = createAsyncThunk("fetchJobs", async () => {
   try {
-    // const storedJobsList = localStorage.getItem("jobsList");
-    // if (storedJobsList) {
-    //   return JSON.parse(storedJobsList);
-    // } else {
-    const response = await fetch("/jobs.json");
+    const response = await fetch(`${BASE_URL}/jobs.json`);
     if (response.ok) {
       const result = await response.json();
-      // localStorage.setItem("jobsList", JSON.stringify(result));
       return result;
     } else {
       throw new Error("Failed to fetch jobs");
