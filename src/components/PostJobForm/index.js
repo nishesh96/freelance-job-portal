@@ -1,12 +1,10 @@
 import {
   Button,
   Card,
-  Checkbox,
   Form,
   Input,
   InputNumber,
   message,
-  Modal,
   Select,
   Upload,
 } from "antd";

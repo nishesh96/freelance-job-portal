@@ -1,5 +1,4 @@
 import { Card, Flex, Radio, Select, Space, Typography } from "antd";
-import { useState } from "react";
 import { SKILLSET } from "../../constants";
 
 const { Title } = Typography;

@@ -1,4 +1,4 @@
-import { Flex, Spin } from "antd";
+import { Flex } from "antd";
 import FreelancerProfileCard from "components/FreelancerProfileCard";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
