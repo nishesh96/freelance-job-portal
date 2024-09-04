@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/%7Bfreelance-job-portal/static/css/main.f855e6bc.css",
-    "main.js": "/%7Bfreelance-job-portal/static/js/main.e6656948.js",
-    "static/js/988.6906c2c5.chunk.js": "/%7Bfreelance-job-portal/static/js/988.6906c2c5.chunk.js",
-    "static/js/482.b0e23dc8.chunk.js": "/%7Bfreelance-job-portal/static/js/482.b0e23dc8.chunk.js",
-    "static/js/351.c74c060b.chunk.js": "/%7Bfreelance-job-portal/static/js/351.c74c060b.chunk.js",
-    "static/js/453.e59c400a.chunk.js": "/%7Bfreelance-job-portal/static/js/453.e59c400a.chunk.js",
-    "static/js/688.9b63fa95.chunk.js": "/%7Bfreelance-job-portal/static/js/688.9b63fa95.chunk.js",
-    "static/js/888.91dd5307.chunk.js": "/%7Bfreelance-job-portal/static/js/888.91dd5307.chunk.js",
-    "static/js/836.c42247b0.chunk.js": "/%7Bfreelance-job-portal/static/js/836.c42247b0.chunk.js",
-    "index.html": "/%7Bfreelance-job-portal/index.html",
-    "main.f855e6bc.css.map": "/%7Bfreelance-job-portal/static/css/main.f855e6bc.css.map",
-    "main.e6656948.js.map": "/%7Bfreelance-job-portal/static/js/main.e6656948.js.map",
-    "988.6906c2c5.chunk.js.map": "/%7Bfreelance-job-portal/static/js/988.6906c2c5.chunk.js.map",
-    "482.b0e23dc8.chunk.js.map": "/%7Bfreelance-job-portal/static/js/482.b0e23dc8.chunk.js.map",
-    "351.c74c060b.chunk.js.map": "/%7Bfreelance-job-portal/static/js/351.c74c060b.chunk.js.map",
-    "453.e59c400a.chunk.js.map": "/%7Bfreelance-job-portal/static/js/453.e59c400a.chunk.js.map",
-    "688.9b63fa95.chunk.js.map": "/%7Bfreelance-job-portal/static/js/688.9b63fa95.chunk.js.map",
-    "888.91dd5307.chunk.js.map": "/%7Bfreelance-job-portal/static/js/888.91dd5307.chunk.js.map",
-    "836.c42247b0.chunk.js.map": "/%7Bfreelance-job-portal/static/js/836.c42247b0.chunk.js.map"
+    "main.css": "/freelance-job-portal/static/css/main.f855e6bc.css",
+    "main.js": "/freelance-job-portal/static/js/main.848e8459.js",
+    "static/js/988.b121243a.chunk.js": "/freelance-job-portal/static/js/988.b121243a.chunk.js",
+    "static/js/482.b0e23dc8.chunk.js": "/freelance-job-portal/static/js/482.b0e23dc8.chunk.js",
+    "static/js/351.c74c060b.chunk.js": "/freelance-job-portal/static/js/351.c74c060b.chunk.js",
+    "static/js/453.e59c400a.chunk.js": "/freelance-job-portal/static/js/453.e59c400a.chunk.js",
+    "static/js/688.9b63fa95.chunk.js": "/freelance-job-portal/static/js/688.9b63fa95.chunk.js",
+    "static/js/888.91dd5307.chunk.js": "/freelance-job-portal/static/js/888.91dd5307.chunk.js",
+    "static/js/836.c42247b0.chunk.js": "/freelance-job-portal/static/js/836.c42247b0.chunk.js",
+    "index.html": "/freelance-job-portal/index.html",
+    "main.f855e6bc.css.map": "/freelance-job-portal/static/css/main.f855e6bc.css.map",
+    "main.848e8459.js.map": "/freelance-job-portal/static/js/main.848e8459.js.map",
+    "988.b121243a.chunk.js.map": "/freelance-job-portal/static/js/988.b121243a.chunk.js.map",
+    "482.b0e23dc8.chunk.js.map": "/freelance-job-portal/static/js/482.b0e23dc8.chunk.js.map",
+    "351.c74c060b.chunk.js.map": "/freelance-job-portal/static/js/351.c74c060b.chunk.js.map",
+    "453.e59c400a.chunk.js.map": "/freelance-job-portal/static/js/453.e59c400a.chunk.js.map",
+    "688.9b63fa95.chunk.js.map": "/freelance-job-portal/static/js/688.9b63fa95.chunk.js.map",
+    "888.91dd5307.chunk.js.map": "/freelance-job-portal/static/js/888.91dd5307.chunk.js.map",
+    "836.c42247b0.chunk.js.map": "/freelance-job-portal/static/js/836.c42247b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.e6656948.js"
+    "static/js/main.848e8459.js"
   ]
 }
