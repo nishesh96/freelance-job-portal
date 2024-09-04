@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchFreelancerProfile } from "services/api";
 
-const ApplicantProfile = ({}) => {
+const ApplicantProfile = () => {
   const { id } = useParams();
   const [user, setUser] = useState([]);
 

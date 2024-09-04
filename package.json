@@ -1,7 +1,7 @@
 {
   "name": "freelance-job-portal",
   "version": "0.1.0",
-  "homepage": "http://nishesh96.github.io/{freelance-job-portal",
+  "homepage": "http://nishesh96.github.io/freelance-job-portal",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
