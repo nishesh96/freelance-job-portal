@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Button, Layout, Spin } from "antd";
+import { Layout, Spin } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import JobsList from "components/JobsList/JobsList";
 import PostJobForm from "components/PostJobForm";
-import { JOBS_DATA, USER_TYPES } from "constants";
+import { USER_TYPES } from "constants";
 import SideNavbar from "components/SideNavbar";
 import HeaderComponent from "components/HeaderComponent";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ import {
   fetchEmployerJobs,
 } from "state/slices/employerSlice";
 import ViewJobApplicantsModal from "components/ViewJobApplicantsModal";
-const { Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const siderStyle = {
   overflow: "auto",

@@ -16,7 +16,7 @@ const FreelancerProfileCard = ({ newUser, user }) => {
     if (error) {
       messageApi.error(error);
     }
-  }, [error]);
+  }, [error, messageApi]);
 
   if (newUser) {
     return (

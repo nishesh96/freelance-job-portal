@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const BASE_URL = process.env.REACT_APP_LOCAL_URL;
-
 export const fetchJobs = createAsyncThunk("fetchJobs", async () => {
   try {
     // const storedJobsList = localStorage.getItem("jobsList");

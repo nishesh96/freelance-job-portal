@@ -24,7 +24,7 @@ const fetchFreelancerProfile = async (id) => {
     const response = await fetch("/freelancers.json");
     if (response.ok) {
       const result = await response.json();
-      const user = result.filter((item) => item.id == id);
+      const user = result.filter((item) => item.id === id);
       return user;
     } else {
       throw new Error("API Failed");

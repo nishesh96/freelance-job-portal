@@ -1,14 +1,4 @@
-import {
-  Button,
-  Card,
-  Col,
-  List,
-  message,
-  Radio,
-  Row,
-  Space,
-  Spin,
-} from "antd";
+import { Col, message, Row, Spin } from "antd";
 import React, { useEffect, useMemo, useState } from "react";
 import JobsFilter from "components/JobsFilterCard";
 import JobsList from "components/JobsList/JobsList";

@@ -1,5 +1,4 @@
-import { Button, Card, List, Typography } from "antd";
-import { USER_TYPES } from "constants";
+import { Button, List, Typography } from "antd";
 const { Text } = Typography;
 
 const JobApplicantsList = ({ data }) => {
