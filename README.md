@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+# Freelancer Job Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Freelancer Job portal is a platform for employers and freelancers.
+Employeers can post a job opening. 
+Freelancers can find a job as per their skills.
 
-## Available Scripts
+### To run the project 
+1) Clone the repository in your computer.
+2) Open the repository in terminal.
+3) npm install 
+4) npm run start 
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Screenshots 
+<img width="1488" height="661" alt="Screenshot 2026-08-04 at 3 07 07 AM" src="https://github.com/user-attachments/assets/5a1f5716-0e59-48f2-bcc4-146f9169bc96" />
+<img width="1512" height="820" alt="Screenshot 2026-08-04 at 3 23 36 AM" src="https://github.com/user-attachments/assets/df500b28-bb2b-4d78-8ca9-f58a8c2cdf91" />
+<img width="1505" height="810" alt="Screenshot 2026-08-04 at 3 20 29 AM" src="https://github.com/user-attachments/assets/b098212c-7408-4767-923a-0d2538dbbd66" />
+<img width="1511" height="817" alt="Screenshot 2026-08-04 at 3 00 21 AM" src="https://github.com/user-attachments/assets/302ef684-6d6d-4209-9701-3a4914323a9b" />
