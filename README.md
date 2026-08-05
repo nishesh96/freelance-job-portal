@@ -2,7 +2,7 @@
 
 Freelancer Job portal is a platform for employers and freelancers.
 Employeers can post a job opening. 
-Freelancers can find a job as per their skills.
+Freelancers can find a job as per their skills, pay and location.
 
 ### To run the project 
 1) Clone the repository in your computer.
