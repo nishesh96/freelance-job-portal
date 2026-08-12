@@ -4,12 +4,8 @@ import useGithubProjects from "hooks/useGithubProjects";
 
 const { Title, Text } = Typography;
 
-const getGitHubRepoLink = (url) => {
-  return url;
-};
-
 const FreelancerProfileCard = ({ newUser, user }) => {
-  const { projects, loading, error } = useGithubProjects(user.githubUserName);
+  const { projects, loading, error } = useGithubProjects(user.githubId);
   const [messageApi, contextHolder] = message.useMessage();
 
   useEffect(() => {

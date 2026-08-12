@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Flex, Spin, Layout, message } from "antd";
 import SideNavbar from "components/SideNavbar";
 import FreelancerProfileCard from "components/FreelancerProfileCard";
@@ -29,7 +29,11 @@ const FreelancerPage = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [currentNavKey, setcurrentNavKey] = useState("profile-settings");
+  const [currentNavKey, setcurrentNavKey] = useState("view-jobs");
+
+  useEffect(() => {
+    dispatch(setProfile(JSON.parse(localStorage.getItem("userInfo"))));
+  }, [dispatch]);
 
   const { userProfile, newUser } = useSelector((state) => ({
     newUser: state.freelancer.newUser,
@@ -87,6 +91,7 @@ const FreelancerPage = () => {
                   form={form}
                   onFinish={onFinish}
                   skillsetOptions={SKILLSET}
+                  user={userProfile}
                 />
               </Flex>
             )}

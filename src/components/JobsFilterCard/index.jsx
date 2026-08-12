@@ -1,28 +1,28 @@
 import { Card, Flex, Radio, Select, Space, Typography } from "antd";
-import { SKILLSET } from "../../constants";
+import { SKILLSET, LOCATIONS, SALARY_RANGES } from "../../constants";
 
-const { Title } = Typography;
-const SALARY_RANGES = [
-  { label: "Any", value: "" },
-  {
-    label: "< $10",
-    value: "10",
-  },
-  {
-    label: "< $30",
-    value: "30",
-  },
-  {
-    label: "< $50",
-    value: "50",
-  },
-];
+const { Text } = Typography;
 
 const JobsFilter = ({ handleFilterChange }) => {
   return (
-    <Card title="Filter">
-      <Flex vertical>
-        <Title level={5}>Salary Per Hour</Title>
+    <Card title="Filters" style={{ width: "21%", minHeight: 400 }}>
+      <Flex vertical justify="start" style={{ gap: "10px" }}>
+        <Text strong>Skills</Text>
+        <Select
+          mode="tags"
+          placeholder="Select skill"
+          onChange={(value) => handleFilterChange("requiredSkills", value)}
+          options={SKILLSET}
+        />
+        <Text strong>Location</Text>
+        <Select
+          mode="tags"
+          placeholder="Select location"
+          onChange={(value) => handleFilterChange("location", value)}
+          options={LOCATIONS}
+        />
+        <Text strong>Pay per hour</Text>
+
         <Radio.Group
           name="minSalary"
           onChange={(e) => handleFilterChange(e.target.name, e.target.value)}
@@ -36,21 +36,6 @@ const JobsFilter = ({ handleFilterChange }) => {
             ))}
           </Space>
         </Radio.Group>
-        <Title level={5}>Skills</Title>
-        <Select
-          mode="tags"
-          placeholder="Skills"
-          onChange={(value) => handleFilterChange("requiredSkills", value)}
-          options={SKILLSET}
-        />
-
-        {/* <Title level={5}>Location</Title>
-        <Select
-          mode="tags"
-          placeholder="location"
-          onChange={(value) => handleFilterChange("location", value)}
-          options={SKILLSET}
-        /> */}
       </Flex>
     </Card>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Spin } from "antd";
+import { Col, Layout, Row, Spin } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import JobsList from "components/JobsList/JobsList";
 import PostJobForm from "components/PostJobForm";
@@ -54,7 +54,7 @@ const EmployerPage = () => {
   useEffect(() => {
     dispatch(fetchEmployerJobs());
     dispatch(fetchApplicantList());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Spin spinning={isLoading}>
@@ -80,11 +80,15 @@ const EmployerPage = () => {
             }}
           >
             {currentNavKey === "jobs" && (
-              <JobsList
-                data={jobsList}
-                userType={USER_TYPES.employer}
-                onButtonClick={handleJobApplicantModalOpen}
-              />
+              <Row gutter={16}>
+                <Col span={16} style={{ margin: "0 auto" }}>
+                  <JobsList
+                    data={jobsList}
+                    userType={USER_TYPES.employer}
+                    onButtonClick={handleJobApplicantModalOpen}
+                  />
+                </Col>
+              </Row>
             )}
             {currentNavKey === "post-job" && <PostJobForm />}
           </Content>

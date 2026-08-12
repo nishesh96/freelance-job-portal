@@ -1,30 +1,33 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchEmployerJobs = createAsyncThunk(
-  "fetchEmployerJobs",
-  async () => {
+  "employer/fetchEmployerJobs",
+  async (_, { rejectWithValue }) => {
     try {
-      // const storedJobsList = localStorage.getItem("jobsList");
-      // if (storedJobsList) {
-      //   return JSON.parse(storedJobsList);
-      // } else {
-      const response = await fetch("/employerJobs.json");
-      if (response.ok) {
-        const result = await response.json();
-        // localStorage.setItem("jobsList", JSON.stringify(result));
-        return result;
-      } else {
+      const storedJobsList = localStorage.getItem("jobsList");
+
+      if (storedJobsList) {
+        return JSON.parse(storedJobsList);
+      }
+
+      const response = await fetch(`${process.env.PUBLIC_URL}/jobs.json`);
+
+      if (!response.ok) {
         throw new Error("Failed to fetch jobs");
       }
-    } catch (error) {
-      console.log("error", error);
+
+      const result = await response.json();
+      localStorage.setItem("jobsList", JSON.stringify(result));
+      return result;
+    } catch (err) {
+      return rejectWithValue(err.message);
     }
-  }
+  },
 );
 
 export const fetchApplicantList = createAsyncThunk(
-  "fetchApplicantList",
-  async () => {
+  "employer/fetchApplicantList",
+  async (_, { rejectWithValue }) => {
     try {
       const response = await fetch("/freelancers.json");
       if (response.ok) {
@@ -34,9 +37,18 @@ export const fetchApplicantList = createAsyncThunk(
         throw new Error("Failed to fetch applicants");
       }
     } catch (error) {
-      console.log("error", error);
+      return rejectWithValue(error.message);
     }
-  }
+  },
+);
+
+export const addNewJob = createAsyncThunk(
+  "employer/addNewJob",
+  async (job, { getState }) => {
+    const jobs = [...getState().employer.jobsList, job];
+    localStorage.setItem("jobsList", JSON.stringify(jobs));
+    return job;
+  },
 );
 
 const employerSlice = createSlice({
@@ -49,9 +61,6 @@ const employerSlice = createSlice({
   reducers: {
     setJobList: (state, action) => {
       state.jobsList = action.payload;
-    },
-    addNewJob: (state, action) => {
-      state.jobsList.push(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -70,7 +79,7 @@ const employerSlice = createSlice({
       })
       .addCase(fetchApplicantList.pending, (state) => {
         state.applicantsList = [];
-        state.isLoading = false;
+        state.isLoading = true;
       })
       .addCase(fetchApplicantList.fulfilled, (state, action) => {
         state.applicantsList = action.payload;
@@ -79,9 +88,12 @@ const employerSlice = createSlice({
       .addCase(fetchApplicantList.rejected, (state) => {
         state.applicantsList = [];
         state.isLoading = false;
+      })
+      .addCase(addNewJob.fulfilled, (state, action) => {
+        state.jobsList.push(action.payload);
       });
   },
 });
 
-export const { setJobList, addNewJob } = employerSlice.actions;
+export const { setJobList } = employerSlice.actions;
 export default employerSlice.reducer;
