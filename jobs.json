@@ -2,57 +2,65 @@
   {
     "id": 101,
     "role": "Software Engineer",
-    "companyName": "KredX",
+    "companyName": "Intuit",
     "skillset": ["node", "react"],
-    "minSalaryPerHour": 5
+    "minSalaryPerHour": 50,
+    "location": "Bengaluru"
   },
   {
     "id": 102,
     "role": "Product Manager",
     "companyName": "Intuit",
     "skillset": ["node"],
-    "minSalaryPerHour": 10
+    "minSalaryPerHour": 10,
+    "location": "Mumbai"
   },
   {
     "id": 103,
     "role": "Tester",
-    "companyName": "Trell",
+    "companyName": "Walmart",
     "skillset": ["java", "ai"],
-    "minSalaryPerHour": 20
+    "minSalaryPerHour": 20,
+    "location": "Bengaluru"
   },
   {
     "id": 104,
     "role": "Analyst",
-    "companyName": "Inavitas",
+    "companyName": "JP Morgan",
     "skillset": ["react"],
-    "minSalaryPerHour": 70
+    "minSalaryPerHour": 70,
+    "location": "Hyderabad"
   },
   {
     "id": 105,
     "role": "Software Engineer",
-    "companyName": "KredX",
+    "companyName": "Flipkart",
     "skillset": ["node", "react"],
-    "minSalaryPerHour": 5
+    "minSalaryPerHour": 40,
+    "location": "Bengaluru"
   },
   {
     "id": 106,
     "role": "Product Manager",
-    "companyName": "Intuit",
+    "companyName": "Microsoft",
     "skillset": ["node"],
-    "minSalaryPerHour": 10
+    "minSalaryPerHour": 10,
+    "location": "New Delhi"
   },
   {
     "id": 107,
-    "role": "Tester",
-    "companyName": "Trell",
+    "role": "Software Tester",
+    "companyName": "Flipkart",
     "skillset": ["java", "ai"],
-    "minSalaryPerHour": 20
+    "minSalaryPerHour": 5,
+    "location": "Mumbai"
   },
   {
     "id": 108,
-    "role": "Analyst",
-    "companyName": "Inavitas",
-    "skillset": ["react"],
-    "minSalaryPerHour": 70
+    "role": "AI Engineer",
+    "companyName": "Google",
+    "skillset": ["react", "ai"],
+    "minSalaryPerHour": 70,
+    "location": "New Delhi"
   }
 ]
