@@ -14,10 +14,28 @@ const SKILLSET = [
 ];
 
 const LOCATIONS = [
-  { value: "bengaluru", label: "AI" },
-  { value: "react", label: "ReactJs" },
+  { value: "Bengaluru", label: "Bengaluru" },
+  { value: "New Delhi", label: "New Delhi" },
+  { value: "Mumbai", label: "Mumbai" },
+  { value: "Hyderabad", label: "Hyderabad" },
+  { value: "Chennai", label: "Chennai" },
 ];
 
+const SALARY_RANGES = [
+  {
+    label: "> $10",
+    value: "10",
+  },
+  {
+    label: "> $30",
+    value: "30",
+  },
+  {
+    label: "> $50",
+    value: "50",
+  },
+  { label: "All", value: "" },
+];
 
 const JOBS_DATA = [
   {
@@ -50,4 +68,4 @@ const JOBS_DATA = [
   },
 ];
 
-export { USER_TYPES, SKILLSET, JOBS_DATA };
+export { USER_TYPES, SKILLSET, JOBS_DATA, LOCATIONS, SALARY_RANGES };

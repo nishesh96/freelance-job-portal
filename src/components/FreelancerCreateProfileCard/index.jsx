@@ -1,12 +1,30 @@
 import { Button, Form, Input, Select, Card } from "antd";
+import { useEffect } from "react";
 
-const FreelancerCreateProfileCard = ({ form, onFinish, skillsetOptions }) => {
+const FreelancerCreateProfileCard = ({
+  form,
+  onFinish,
+  skillsetOptions,
+  user,
+}) => {
+  useEffect(() => {
+    if (user.firstName) {
+      form.setFieldsValue({
+        firstName: user.firstName,
+        lastName: user.lastName,
+        skillset: user.skillset,
+        githubUserName: user.githubId,
+      });
+    }
+  }, [user, form]);
+
   return (
     <Card title="Profile Settings" style={{ width: 500 }}>
       <Form layout={"vertical"} form={form} onFinish={onFinish}>
         <Form.Item
           label="First Name"
           name="firstName"
+          initialValue={user.firstName}
           rules={[
             {
               required: true,
@@ -19,6 +37,7 @@ const FreelancerCreateProfileCard = ({ form, onFinish, skillsetOptions }) => {
         <Form.Item
           label="Last Name"
           name="lastName"
+          initialValue={user.lastName}
           rules={[
             {
               required: true,
@@ -31,6 +50,7 @@ const FreelancerCreateProfileCard = ({ form, onFinish, skillsetOptions }) => {
         <Form.Item
           label="Skills"
           name="skillset"
+          initialValue={user.skillset}
           rules={[
             {
               required: true,
@@ -50,6 +70,7 @@ const FreelancerCreateProfileCard = ({ form, onFinish, skillsetOptions }) => {
         <Form.Item
           label="GitHub User Name"
           name="githubUserName"
+          initialValue={user.githubId}
           rules={[
             {
               required: true,

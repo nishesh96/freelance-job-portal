@@ -1,19 +1,20 @@
 const mockApiLogin = (username, password, userType) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (username === "user" && password === "password") {
+      if (username === "demouser" && password === "password") {
         resolve({
           userInfo: {
-            name: "John Doe",
-            email: "john.doe@gmail.com",
+            firstName: "Demo",
+            lastName: "User",
+            email: "demouser@ymail.com",
             skillset: ["javascript", "react"],
-            minSalaryPerHour: 5000,
+            githubId: "nishesh96",
           },
           userType: userType,
           userToken: "fake-token-123",
         });
       } else {
-        reject("Error Logging In");
+        reject("Error logging in. Please check your credentials.");
       }
     }, 1000);
   });
@@ -37,7 +38,7 @@ const fetchFreelancerProfile = async (id) => {
 const fetchGitHubProjects = async (githubId) => {
   try {
     const response = await fetch(
-      `https://api.github.com/users/${githubId}/repos`
+      `https://api.github.com/users/${githubId}/repos`,
     );
     if (response.ok) {
       let result = await response.json();

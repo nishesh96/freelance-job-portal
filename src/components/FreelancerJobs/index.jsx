@@ -1,10 +1,11 @@
-import { Col, message, Row, Spin } from "antd";
+import { message, Spin, Flex } from "antd";
 import React, { useEffect, useMemo, useState } from "react";
 import JobsFilter from "components/JobsFilterCard";
 import JobsList from "components/JobsList/JobsList";
 import { USER_TYPES } from "constants";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobs, setAppliedJobs } from "state/slices/freelancerSlice";
+import AppliedJobsList from "components/AppliedJobsList/JobsList";
 
 const filterJobs = (jobsList, filters, appliedJobIds) => {
   return jobsList.filter((job) => {
@@ -13,16 +14,15 @@ const filterJobs = (jobsList, filters, appliedJobIds) => {
     const meetsSkillsetRequirement =
       filters.requiredSkills.length === 0 ||
       filters.requiredSkills.every((skill) => job.skillset.includes(skill));
-    // const meetsLocationRequirement =
-    //   filters.location.length === 0 ||
-    //   filters.location.every((skill) => job.location.includes(skill));
+    const meetsLocationRequirement =
+      filters.location.length === 0 || filters.location.includes(job.location);
     const meetsNotAppliedRequirment =
       appliedJobIds.length === 0 || appliedJobIds.every((id) => job.id !== id);
     return (
+      meetsNotAppliedRequirment &&
       meetsSalaryRequirement &&
       meetsSkillsetRequirement &&
-      meetsNotAppliedRequirment
-      // meetsLocationRequirement
+      meetsLocationRequirement
     );
   });
 };
@@ -61,6 +61,7 @@ const FreelancerJobs = () => {
   }, [dispatch]);
 
   const handleFilterChange = (name, value) => {
+    console.log("Filter changed:", name, value);
     setFilters((prevFilters) => ({
       ...prevFilters,
       [name]: value,
@@ -69,24 +70,21 @@ const FreelancerJobs = () => {
 
   const filteredJobs = useMemo(
     () => filterJobs(jobsList, filters, appliedJobIds),
-    [jobsList, filters, appliedJobIds]
+    [jobsList, filters, appliedJobIds],
   );
 
   return (
     <Spin spinning={loadSpinner}>
-      <Row>
-        <Col span={4}>
-          <JobsFilter handleFilterChange={handleFilterChange} />
-        </Col>
-        <Col span={12}>
-          {contextHolder}
-          <JobsList
-            data={filteredJobs}
-            userType={USER_TYPES.freelancer}
-            onButtonClick={easyApplyButtonHandler}
-          />
-        </Col>
-      </Row>
+      <Flex gap="middle" justify="space-evenly" align="start">
+        <JobsFilter handleFilterChange={handleFilterChange} />
+        {contextHolder}
+        <JobsList
+          data={filteredJobs}
+          userType={USER_TYPES.freelancer}
+          onButtonClick={easyApplyButtonHandler}
+        />
+        <AppliedJobsList jobsList={jobsList} appliedJobIds={appliedJobIds} />
+      </Flex>
     </Spin>
   );
 };

@@ -3,12 +3,20 @@ import { USER_TYPES } from "constants";
 
 const JobsList = ({ data, userType, onButtonClick }) => {
   return (
-    <Card title={"Jobs List"}>
+    <Card
+      title={
+        USER_TYPES["freelancer"] === userType ? "Available Jobs" : "Posted Jobs"
+      }
+      style={{
+        width: USER_TYPES["freelancer"] === userType ? "50%" : "100%",
+        minHeight: 400,
+      }}
+    >
       {" "}
       <List
         pagination={{ position: "bottom", align: "center", pageSize: 5 }}
         dataSource={data}
-        rowKey={(item) => item.id}
+        rowKey={(item) => item?.id}
         renderItem={(item) => (
           <List.Item
             actions={
@@ -18,15 +26,15 @@ const JobsList = ({ data, userType, onButtonClick }) => {
                       type="primary"
                       onClick={() => onButtonClick(item.id)}
                     >
-                      Easy Apply
+                      Apply
                     </Button>,
                   ]
                 : [
                     <Button
-                      type="default"
+                      type="primary"
                       onClick={() => onButtonClick(item.id)}
                     >
-                      View Applicants ({item.id})
+                      Applicants ({item.minSalaryPerHour})
                     </Button>,
                   ]
             }
@@ -43,11 +51,11 @@ const JobsList = ({ data, userType, onButtonClick }) => {
 };
 
 const JobsDescription = ({ item }) => {
-  const { companyName, skillset, minSalaryPerHour } = item;
+  const { companyName, skillset, minSalaryPerHour, location } = item;
   return (
     <p>
-      {companyName} | Skills: {`${skillset}`} | Salary Per Hour: $
-      {minSalaryPerHour}{" "}
+      {companyName} | Skill Required: {`${skillset}`} | Pay/hour: $
+      {minSalaryPerHour} | Location: {location}
     </p>
   );
 };

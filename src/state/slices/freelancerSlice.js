@@ -1,15 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-console.log("PUBLIC_URL", process.env.PUBLIC_URL);
+// const NODE_ENV = process.env.NODE_ENV;
 
-const NODE_ENV = process.env.NODE_ENV;
-
-const BASE_URL =
-  NODE_ENV === "development"
-    ? process.env.REACT_APP_LOCAL_URL
-    : process.env.REACT_APP_PRODUCTION_URL;
-
-console.log("BASE_URL", BASE_URL);
+// const BASE_URL =
+//   NODE_ENV === "development"
+//     ? process.env.REACT_APP_LOCAL_URL
+//     : process.env.REACT_APP_PRODUCTION_URL;
 
 export const fetchJobs = createAsyncThunk("fetchJobs", async () => {
   try {
@@ -28,7 +24,7 @@ export const fetchJobs = createAsyncThunk("fetchJobs", async () => {
 const freelancerSlice = createSlice({
   name: "freelancer",
   initialState: {
-    newUser: true,
+    newUser: false,
     userProfile: {
       firstName: null,
       lastName: null,

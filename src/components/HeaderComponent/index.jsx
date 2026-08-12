@@ -17,11 +17,11 @@ const HeaderComponent = ({ title, onButtonClick }) => {
       <Row align="center">
         <Col span={10}>
           <Text strong style={{ fontSize: "20px", marginLeft: "20px" }}>
-            {title}
+            Welcome DemoUser
           </Text>
         </Col>
         <Col offset={10} span={4}>
-          <Button type="primary" onClick={onButtonClick}>
+          <Button type="default" variant="outlined" onClick={onButtonClick}>
             Log Out
           </Button>
         </Col>

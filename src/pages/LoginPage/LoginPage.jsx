@@ -1,51 +1,44 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Card, Checkbox, Flex, Form, Input, Layout, Radio } from "antd";
-import { registerUser } from "state/slices/authSlice";
+import { Button, Card, Flex, Form, Input, Layout, message, Radio } from "antd";
+import { loginUser } from "state/slices/authSlice";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { userToken, isLoading, userType } = useSelector((state) => state.auth);
+  const { userToken, isLoading, userType, error } = useSelector(
+    (state) => state.auth,
+  );
 
   const onFinish = async (values) => {
     let { username, password, userType } = values;
-
     if (username && password && userType) {
-      dispatch(registerUser({ username, password, userType }));
-
-      // const token = await mockApiLogin(loginId, password, userType);
-      // if (token) {
-      //   if (userType === "freelancer") {
-      //     navigate("/freelancer/profile");
-      //   } else if (userType === "employer") {
-      //     navigate("/employer");
-      //   }
-      // } else {
-      //   console.log("Incorrect UserName or Password");
-      // }
-    } else {
-      // console.log("Please fill in all fields");
+      dispatch(loginUser({ username, password, userType }));
     }
-  };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
   };
 
   useEffect(() => {
-    // console.log("userType", userType);
-    // console.log("userToken", userToken);
     if (userToken && userType === "freelancer") {
       navigate("/freelancer");
     } else if (userToken && userType === "employer") {
       navigate("/employer");
     }
-  }, [userToken, isLoading, userType]);
+  }, [userToken, isLoading, userType, navigate]);
+
+  useEffect(() => {
+    if (error) {
+      message.error(error);
+    }
+  }, [error]);
 
   return (
     <Layout>
-      <Flex align="center" justify="center" style={{ height: "100vh" }}>
+      <Flex
+        align="center"
+        justify="center"
+        style={{ height: "100vh", backgroundColor: "aqua" }}
+      >
         <Card title="Job Portal Login">
           <Form
             name="login-form"
@@ -59,14 +52,13 @@ const LoginPage = () => {
               width: 500,
             }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
           >
             <Form.Item
               label="Login as"
               name="userType"
               initialValue={"freelancer"}
             >
-              <Radio.Group>
+              <Radio.Group optionType="button" defaultValue="freelancer">
                 <Radio.Button value="freelancer">Freelancer</Radio.Button>
                 <Radio.Button value="employer">Employer</Radio.Button>
               </Radio.Group>
@@ -74,6 +66,7 @@ const LoginPage = () => {
             <Form.Item
               label="Username"
               name="username"
+              initialValue="demouser"
               rules={[
                 {
                   required: true,
@@ -81,12 +74,13 @@ const LoginPage = () => {
                 },
               ]}
             >
-              <Input />
+              <Input value="demouser" placeholder="Type demouser" />
             </Form.Item>
 
             <Form.Item
               label="Password"
               name="password"
+              initialValue="password"
               rules={[
                 {
                   required: true,
@@ -94,7 +88,7 @@ const LoginPage = () => {
                 },
               ]}
             >
-              <Input.Password />
+              <Input.Password value="password" placeholder="Type password" />
             </Form.Item>
             <Form.Item
               wrapperCol={{
