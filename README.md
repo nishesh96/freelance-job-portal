@@ -1,14 +1,14 @@
 # Freelancer Job Portal
 
-Freelancer Job portal is a platform for employers and freelancers.
-Employeers can post a job opening. 
-Freelancers can find a job as per their skills, pay and location.
+A simple job portal for freelances to find jobs and companies to post jobs.
+Built using React, Redux framework technology. 
 
 ### For Developers, to run the project locally - 
 1) Clone the repository in your computer.
 2) Open the folder in terminal.
 3) run `npm install` 
 4) run  `npm run start`
+
 
 ### Screenshots 
 <img width="1512" height="821" alt="Screenshot 2026-08-21 at 11 42 26 AM" src="https://github.com/user-attachments/assets/7ba11b46-0346-4c32-b0c0-8de7851113b2" />
